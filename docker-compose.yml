@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+    web:
+        build: web
+        image: trip-meal-web
+        env_file: .env
+        environment:
+            - DATABASE_URL=mysql://${MYSQL_ROOT_USER}:${MYSQL_ROOT_PASSWORD}@db:${MYSQL_PORT}/${MYSQL_DATABASE}
+        networks:
+            - backend
+        ports:
+            - 5000:5000
+        depends_on:
+            - db
+    db: 
+        build: db  
+        image: trip-meal-db
+        env_file: .env
+        expose: 
+            - 3306
+        networks:
+            - backend
+        volumes:
+            - ./db/db_data:/var/lib/mysql
+
+volumes:
+    trip-meal:
+
+networks:
+    backend:
