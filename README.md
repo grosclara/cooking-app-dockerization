@@ -80,6 +80,12 @@ ENTRYPOINT ["python","app.py"]
 
 ### Docker compose file
 
+Since the application consists of several images, I created a `docker-compose-.yml` file to define the services that make up the application so that they can be run together in an isolated environment. In this file, we find both the `db` and `web` services. In addition, the top-level `networks` key lets you specify networks to be created as well as the `volumes`key word defining volumes to be created.
+
+In the web service, we notice that it depends on the second db service thanks to the indication depends_on which expresses dependency between services. Moreover, we map ports in the HOST:CONTAINER format, 
+
+Translated with www.DeepL.com/Translator (free version)
+
 ### Retrieve images
 
 Either you can pull the images from the DockerHub registry by executing the following commands in a terminal :
@@ -94,7 +100,10 @@ docker-compose build
 
 ### Run images
 
-To run the application correctly once both images are pulled either from the Dockerhub registry or either locally, simply create an `.env` file in the root folder to initialize the environment variables and run the docker-compose up command to run containers according to the instructions in the `docker-compose.yml` file.
+To run the application correctly once both images are pulled either from the Dockerhub registry or either locally, simply create an `.env` file in the root folder to initialize the environment variables and run the command to run containers according to the instructions in the `docker-compose.yml` file.
+``` 
+docker-compose up 
+```
 
 Le fichier `.env`doit contenir les variables suivantes. Lorsque vous créez ce fichier, libre à vous de choisir la valeur de ces variables d'environnement.
 ```
