@@ -6,7 +6,7 @@ services:
         image: trip-meal-web
         env_file: .env
         environment:
-            - DATABASE_URL=mysql://${MYSQL_USER}:${MYSQL_PASSWORD}@db:3306/$tripmealdb
+            - DATABASE_URL=mysql://${MYSQL_USER}:${MYSQL_PASSWORD}@db:3306/tripmealdb
         networks:
             - banana
         ports:
