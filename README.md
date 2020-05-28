@@ -106,8 +106,7 @@ docker-compose up
 
 The `.env` file must contain the following variables. When you create this file, you are free to choose the value of these environment variables.
 ```
-MYSQL_USER=user
-MYSQL_PASSWORD=my-secret-pw
+MYSQL_ROOT_PASSWORD=my-secret-pw
 TRIPMEAL_KEY='my-secret-key'
 SERVER_PORT=5000
 ```
