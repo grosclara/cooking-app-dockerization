@@ -100,7 +100,6 @@ To run the application correctly once both images are pulled either from the Doc
 Le fichier `.env`doit contenir les variables suivantes. Lorsque vous créez ce fichier, libre à vous de choisir la valeur de ces variables d'environnement.
 ```
 MYSQL_DATABASE=tripmealdb
-MYSQL_PORT=3306
 MYSQL_USER=user
 MYSQL_PASSWORD=my-secret-pw
 TRIPMEAL_KEY='my-secret-key'

@@ -6,9 +6,9 @@ services:
         image: trip-meal-web
         env_file: .env
         environment:
-            - DATABASE_URL=mysql://${MYSQL_USER}:${MYSQL_PASSWORD}@db:${MYSQL_PORT}/$tripmealdb
+            - DATABASE_URL=mysql://${MYSQL_USER}:${MYSQL_PASSWORD}@db:3306/$tripmealdb
         networks:
-            - backend
+            - banana
         ports:
             - ${SERVER_PORT}:${SERVER_PORT}
         depends_on:
@@ -16,11 +16,10 @@ services:
     db: 
         build: db  
         image: trip-meal-db
-        env_file: .env
         expose: 
             - 3306
         networks:
-            - backend
+            - banana
         volumes:
             - ./db/db_data:/var/lib/mysql
 
@@ -28,4 +27,4 @@ volumes:
     trip-meal:
 
 networks:
-    backend:
+    banana:
