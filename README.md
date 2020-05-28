@@ -89,8 +89,8 @@ On the other hand in the `db` service, which is also added to the `banana` netwo
 
 Either you can pull the images from the DockerHub registry by executing the following commands in a terminal :
 ```
-docker pull grosclara/trip-meal-web
-docker pull grosclara/trip-meal-db
+docker pull grosclara/trip-meal-web:1.1
+docker pull grosclara/trip-meal-db:1.1
 ```
 ... Or you can directly build the two images locally by placing yourself in the root folder and executing the following command :
 ```
@@ -106,8 +106,7 @@ docker-compose up
 
 The `.env` file must contain the following variables. When you create this file, you are free to choose the value of these environment variables.
 ```
-MYSQL_USER=user
-MYSQL_PASSWORD=my-secret-pw
+MYSQL_ROOT_PASSWORD=my-secret-pw
 TRIPMEAL_KEY='my-secret-key'
 SERVER_PORT=5000
 ```
