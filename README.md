@@ -104,7 +104,7 @@ To run the application correctly once both images are pulled either from the Doc
 docker-compose up 
 ```
 
-Le fichier `.env`doit contenir les variables suivantes. Lorsque vous créez ce fichier, libre à vous de choisir la valeur de ces variables d'environnement.
+The `.env` file must contain the following variables. When you create this file, you are free to choose the value of these environment variables.
 ```
 MYSQL_DATABASE=tripmealdb
 MYSQL_USER=user
