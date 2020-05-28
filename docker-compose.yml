@@ -21,10 +21,10 @@ services:
         networks:
             - banana
         volumes:
-            - ./db/db_data:/var/lib/mysql
+            - data_volume:/var/lib/mysql
 
 volumes:
-    trip-meal:
+    data_volume:
 
 networks:
     banana:
