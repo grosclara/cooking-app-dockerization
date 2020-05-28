@@ -92,7 +92,6 @@ docker pull grosclara/trip-meal-db
 docker-compose build
 ```
 
-
 ### Run images
 
 To run the application correctly once both images are pulled either from the Dockerhub registry or either locally, simply create an `.env` file in the root folder to initialize the environment variables and run the docker-compose up command to run containers according to the instructions in the `docker-compose.yml` file.
