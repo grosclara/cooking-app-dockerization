@@ -6,11 +6,11 @@ services:
         image: trip-meal-web
         env_file: .env
         environment:
-            - DATABASE_URL=mysql://${MYSQL_ROOT_USER}:${MYSQL_ROOT_PASSWORD}@db:${MYSQL_PORT}/${MYSQL_DATABASE}
+            - DATABASE_URL=mysql://${MYSQL_USER}:${MYSQL_PASSWORD}@db:${MYSQL_PORT}/$tripmealdb
         networks:
             - backend
         ports:
-            - 5000:5000
+            - ${SERVER_PORT}:${SERVER_PORT}
         depends_on:
             - db
     db: 
