@@ -3,7 +3,7 @@ version: "3"
 services:
     web:
         build: web
-        image: trip-meal-web
+        image: grosclara/trip-meal-web
         env_file: .env
         environment:
             - DATABASE_URL=mysql://root:${MYSQL_ROOT_PASSWORD}@db:3306/tripmealdb
@@ -15,7 +15,7 @@ services:
             - db
     db: 
         build: db  
-        image: trip-meal-db
+        image: grosclara/trip-meal-db
         env_file: .env
         expose: 
             - 3306
