@@ -21,10 +21,10 @@ services:
         networks:
             - banana
         volumes:
-            - data_volume:/var/lib/mysql
+            - db-data:/var/lib/mysql
 
 volumes:
-    data_volume:
+    db-data:
 
 networks:
     banana:
