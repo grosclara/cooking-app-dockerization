@@ -1,6 +1,6 @@
 # Dockerize the TripMealApp
 
-Dockerizing the TripMealApp application (https://github.com/DanielAndreasen/TripMeal) is the process of converting this particular app to run within a Docker container.
+This project consists of dockerizing the **TripMeal** application (https://github.com/DanielAndreasen/TripMeal) which is the process of converting this particular app to run within a Docker container.
 
 ## Description of the TripMealApp
 
@@ -80,7 +80,7 @@ ENTRYPOINT ["python","app.py"]
 
 ### Docker compose file
 
-Since the application consists of several images, I created a `docker-compose-.yml` file to define the services that make up the application so that they can be run together in an isolated environment. In this file, we find both the `db` and `web` services. In addition, the top-level `networks` key lets you specify networks to be created.
+Since the application consists of several images, I created a `docker-compose.yml` file to define the services that make up the application so that they can be run together in an isolated environment. In this file, we find both the `db` and `web` services. In addition, the top-level `networks` key lets you specify networks to be created.
 
 In the web service, we notice that it depends on the `db` service thanks to the indication `depends_on` which expresses dependency between services. Moreover, we map ports in the HOST:CONTAINER format, and add this service to the `banana` network.
 On the other hand in the `db` service, which is also added to the `banana` network, the 3306 port is exposed (through the key word `expose`) without publishing it to the host machine - it will only be accessible to linked services (e.g the web service). Finally, the `db` service uses a named volume called `db-data` that is listed under the top-level `volumes` key. This volume keeps the `tripmealdb` database data, initially created by the `db/Dockerfile`. Therefore, each time the container is restarted, the database already exists and the data previously entered persists.
