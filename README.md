@@ -28,7 +28,7 @@ The description of the Dockerfile, specifying the meaning of each instruction.
 
 ### Run images
 
-To run the application correctly once both images are pulled either from the Dockerhub registry or either locally, simply create an `.env` file in the root folder to initialize the environment variables and run the docker-compose up command to rotate both the containers according to the instructions in the docker-compose file.
+To run the application correctly once both images are pulled either from the Dockerhub registry or either locally, simply create an `.env` file in the root folder to initialize the environment variables and run the docker-compose up command to run containers according to the instructions in the `docker-compose.yml` file.
 
 Le fichier `.env`doit contenir les variables suivantes. Lorsque vous créez ce fichier, libre à vous de choisir la valeur de ces variables d'environnement.
 ```
